@@ -7,9 +7,6 @@ const PORT = 8080;
 const server = net.createServer(socket => {
   socket.on("data", chunk => {
     // read incoming data
-    console.log("data");
-    console.log(chunk.toString());
-
     // parse the string
     var test = chunk.toString().split(" ");
     // grab the right file
@@ -46,7 +43,7 @@ Connection: keep-alive
     }else if(test[1] === `/css/styles.css`){
       socket.write(`HTTP/1.1 200 OK
 Server: dope magic
-Content-Type: text/html
+Content-Type: text/css
 Connection: keep-alive
 
       ${files.styles}`)
