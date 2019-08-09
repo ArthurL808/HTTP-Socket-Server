@@ -16,6 +16,7 @@ const server = net.createServer(socket => {
       socket.write(`HTTP/1.1 200 OK
 Server: dope magic
 Content-Type: text/html
+Content-Length: ${files.index.length}
 Connection: keep-alive
 
 ${files.index}`);
@@ -23,6 +24,7 @@ ${files.index}`);
       socket.write(`HTTP/1.1 200 OK
 Server: dope magic
 Content-Type: text/html
+Content-Length: ${files.index.length}
 Connection: keep-alive
 
       ${files.index}`)
@@ -30,6 +32,7 @@ Connection: keep-alive
       socket.write(`HTTP/1.1 200 OK
 Server: dope magic
 Content-Type: text/html
+Content-Length: ${files.hydrogen.length}
 Connection: keep-alive
 
       ${files.hydrogen}`)
@@ -37,6 +40,7 @@ Connection: keep-alive
       socket.write(`HTTP/1.1 200 OK
 Server: dope magic
 Content-Type: text/html
+Content-Length: ${files.helium.length}
 Connection: keep-alive
 
       ${files.helium}`)
@@ -44,6 +48,7 @@ Connection: keep-alive
       socket.write(`HTTP/1.1 200 OK
 Server: dope magic
 Content-Type: text/css
+Content-Length: ${files.styles.length}
 Connection: keep-alive
 
       ${files.styles}`)
@@ -51,6 +56,7 @@ Connection: keep-alive
       socket.write(`HTTP/1.1 404 NOT FOUND
 Server: dope magic
 Content-Type: text/html
+Content-Length: ${files.notFound.length}
 Connection: keep-alive
 
       ${files.notFound}`)
